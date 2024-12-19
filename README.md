@@ -23,3 +23,5 @@ Learning these conditionals is often much simpler than learning the joint distri
 My implementation will focus on the **PixelCNN**.  
 
 
+![download (3)](https://github.com/user-attachments/assets/5a360286-7aeb-46c3-a17e-5e56a9fc0492)
+![666](https://github.com/user-attachments/assets/4e4c417b-6d6e-4b1d-8eaf-e23d54d21e9c)
