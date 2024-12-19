@@ -22,9 +22,9 @@ $$p(\mathbf{x})=p(x_1, ..., x_n)=\prod_{i=1}^{n} p(x_i|x_1,...,x_{i-1})$$
 Learning these conditionals is often much simpler than learning the joint distribution all together.  
 My implementation will focus on the **PixelCNN**.  
 
-Example of a probablistic image completion
-![download (3)](https://github.com/user-attachments/assets/5a360286-7aeb-46c3-a17e-5e56a9fc0492)   
+Example of a probablistic image completion:    
+![download (3)](https://github.com/user-attachments/assets/5a360286-7aeb-46c3-a17e-5e56a9fc0492)     
 
-
-          
+Result:
+            
 ![666](https://github.com/user-attachments/assets/4e4c417b-6d6e-4b1d-8eaf-e23d54d21e9c)
