@@ -14,7 +14,7 @@ Each has a notebook solution.
 Autoregressice model:   
 Generally, autoregressive model over high-dimensional data $\mathbf{x}$ factor the joint distribution as the following product of conditionals:  
 $$p(\mathbf{x})=p(x_1, ..., x_n)=\prod_{i=1}^{n} p(x_i|x_1,...,x_{i-1})$$   
-![autoregressive_image_modeling](https://github.com/user-attachments/assets/80d42bfa-cdf2-4139-bccf-0c39480be6c3)
+![autoregressive_image_modeling](https://github.com/user-attachments/assets/80d42bfa-cdf2-4139-bccf-0c39480be6c3](https://wiki.math.uwaterloo.ca/statwiki/images/thumb/5/5b/xi_img.png/500px-xi_img.png)
 
 
 Learning these conditionals is often much simpler than learning the joint distribution all together.
