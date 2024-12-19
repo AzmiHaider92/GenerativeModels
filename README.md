@@ -1,7 +1,7 @@
 # GenerativeModels
-Multiple generative model implementations as part of the "Deep generative models" course. 
 
-There are 4 projects under this repo:  
+Hello world,
+As part of the course "Deep generative models", I implemented 4 different generative models:  
 4. Autoregressive  
 5. VAE  
 6. NF  
