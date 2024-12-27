@@ -23,7 +23,7 @@ $$p(\mathbf{x})=p(x_1, ..., x_n)=\prod_{i=1}^{n} p(x_i|x_1,...,x_{i-1})$$
 
   
 Learning these conditionals is often much simpler than learning the joint distribution all together.  
-My implementation will focus on the **PixelCNN**.  
+Implementation of **PixelCNN** (Conditional Image Generation with PixelCNN Decoders; Oord, et al. 2016).  
 
 Example of a probablistic image completion:    
 ![download (3)](https://github.com/user-attachments/assets/5a360286-7aeb-46c3-a17e-5e56a9fc0492)     
@@ -39,10 +39,13 @@ Solution: NF.ipynb
 
 Implementation of NICE (Non-linear Independent Component Estimation; Dinh, et al. 2015).
 
-
-![nf4](https://github.com/user-attachments/assets/ab838fa6-8fd5-44b4-bfc0-3a8715bab14b)
+Visualization of the process of normalizing flows from a normal distribution sample to a desired learned distribuion:  
 ![nf1](https://github.com/user-attachments/assets/a36b4fcd-ffdc-4883-9dd1-ecfb06841b1a)
 ![nf2](https://github.com/user-attachments/assets/81b9288b-dd3c-49d1-bc0c-4e4a12eed22e)
+
+   
+Visualization of traversing the latent space:  
+![nf4](https://github.com/user-attachments/assets/ab838fa6-8fd5-44b4-bfc0-3a8715bab14b)
 
 
    
