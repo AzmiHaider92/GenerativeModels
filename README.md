@@ -2,8 +2,7 @@
 
 Hello world,  
 As part of the course "Deep generative models", I implemented 4 different generative models.    
-The description is under:  
-DGM_x4. Autoregressive   
+
 DGM_x5. VAE    
 DGM_x6. NF    
 DGM_x7. DDPM    
@@ -11,7 +10,11 @@ DGM_x7. DDPM
 Each has a notebook solution.  
   
   
-# Autoregressive Model:   
+# 1. Autoregressive Model:    
+Project description: DGM_x4.  
+Solution: Autoregressive_Image_Modeling.ipynb   
+    
+   
 Generally, autoregressive model over high-dimensional data $\mathbf{x}$ factor the joint distribution as the following product of conditionals:  
   
 $$p(\mathbf{x})=p(x_1, ..., x_n)=\prod_{i=1}^{n} p(x_i|x_1,...,x_{i-1})$$     
