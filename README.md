@@ -11,7 +11,7 @@ DGM_x7. DDPM
 Each has a notebook solution.  
   
   
-# Autoregressice:   
+# Autoregressive Model:   
 Generally, autoregressive model over high-dimensional data $\mathbf{x}$ factor the joint distribution as the following product of conditionals:  
   
 $$p(\mathbf{x})=p(x_1, ..., x_n)=\prod_{i=1}^{n} p(x_i|x_1,...,x_{i-1})$$     
@@ -28,3 +28,6 @@ Example of a probablistic image completion:
 Result:
             
 ![666](https://github.com/user-attachments/assets/4e4c417b-6d6e-4b1d-8eaf-e23d54d21e9c)
+
+
+# Normalizing flow model:   
