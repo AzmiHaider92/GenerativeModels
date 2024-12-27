@@ -39,10 +39,10 @@ Solution: NF.ipynb
 
 Implementation of NICE (Non-linear Independent Component Estimation; Dinh, et al. 2015).
 
-![nf3](https://github.com/user-attachments/assets/e525f58f-5778-401b-8655-023fdb59f553)
-![nf4](https://github.com/user-attachments/assets/c48d4e2f-c9b8-4f16-a0b0-4c29d6b86707)
-![nf1](https://github.com/user-attachments/assets/7f5cbd15-2cc0-454b-8a92-5d04712b4699)
-![nf2](https://github.com/user-attachments/assets/4d01bfcc-bd75-41f0-b9b8-260f82ad6c63)
+
+![nf4](https://github.com/user-attachments/assets/ab838fa6-8fd5-44b4-bfc0-3a8715bab14b)
+![nf1](https://github.com/user-attachments/assets/a36b4fcd-ffdc-4883-9dd1-ecfb06841b1a)
+![nf2](https://github.com/user-attachments/assets/81b9288b-dd3c-49d1-bc0c-4e4a12eed22e)
 
 
    
