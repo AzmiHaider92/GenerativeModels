@@ -3,78 +3,90 @@
 ### Discriminative Models
 
 A discriminative model learns:
-```
-P(y | x)
-```
 
-Given an input x, it directly predicts the label y.
+$$
+P(y \mid x)
+$$
 
-Goal: learn decision boundaries between classes.
+Given an input $x$, it directly predicts the label $y$.
+
+**Goal:** learn decision boundaries between classes.
 
 ---
 
 ### Generative Models
 
 A generative model learns:
-```
-P(x, y) = P(x | y) * P(y)
-```
-That means:
-- $$P(x | y)$$: what data looks like for each class  
-- $$P(y)$$: how common each class is  
 
-Goal: model how the data is generated.
+$$
+P(x, y) = P(x \mid y) P(y)
+$$
+
+That means:
+- $P(x \mid y)$: what data looks like for each class  
+- $P(y)$: class prior  
+
+**Goal:** model how the data is generated.
 
 ---
 
 ## Using a Generative Model for Classification
 
-We use Bayes rule:
-```
-P(y | x) ∝ P(x | y) * P(y)
-```
+Using Bayes' rule:
+
+$$
+P(y \mid x) = \frac{P(x \mid y) P(y)}{P(x)}
+$$
+
 For prediction:
-```
-y_hat = argmax_y P(x | y) * P(y)
-```
+
+$$
+\hat{y} = \arg\max_y P(x \mid y) P(y)
+$$
+
 If classes are uniform:
-```
-y_hat = argmax_y P(x | y)
-```
+
+$$
+\hat{y} = \arg\max_y P(x \mid y)
+$$
+
 ---
 
-## Simple Example: Gaussian Naive Bayes
+## Example: Gaussian Naive Bayes
 
-Assume each class follows a Gaussian:
-```
-P(x | y) = N(x | $μ_y$, $Σ_y$)
-```
+Assume:
+
+$$
+P(x \mid y) = \mathcal{N}(x \mid \mu_y, \Sigma_y)
+$$
+
 ### Training
-For each class y:
-- Compute mean $$μ_y$$
-- Compute covariance $$Σ_y$$
+For each class $y$:
+- Estimate $\mu_y$
+- Estimate $\Sigma_y$
 
 ### Inference
-Given a new sample x:
 
-1. Compute log-likelihood for each class:
-   $$log P(x | y)$$
+Given a new sample $x$:
 
-2. Predict:
-   $$y_hat = argmax_y log P(x | y)$$
+$$
+\hat{y} = \arg\max_y \log P(x \mid y)
+$$
 
 ---
 
 ## Key Insight
 
-- Discriminative → learns $$P(y | x)$$ directly  
-- Generative → learns P(x | y) and derives $$P(y | x)$$
+- Discriminative → learns $P(y \mid x)$ directly  
+- Generative → learns $P(x \mid y)$ and derives $P(y \mid x)$  
 
-Generative ⇒ Discriminative (via Bayes), but not the opposite
+$$
+\text{Generative} \Rightarrow \text{Discriminative (via Bayes)}
+$$
 
 ---
 
 ## One-Line Summary
 
-A generative model classifies by asking:
-"Which class is most likely to have generated this data?"
+> A generative model classifies by asking:  
+> **"Which class is most likely to have generated this data?"**
