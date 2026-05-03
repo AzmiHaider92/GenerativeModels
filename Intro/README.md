@@ -12,4 +12,4 @@ They can generate new data and also be used for classification.
 - Gaussian Mixture Models
 - Flow Matching
 
-[← Back to Intro](./README.md)
+[← Back to Intro](/../README.md)
