@@ -54,14 +54,18 @@ $$
 
 Assume:
 
+- Images are vectors $x∈R^d$ (flattened pixels)
+- Labels $y∈{0,…,9}$
+  
+We model:
 $$
 P(x \mid y) = \mathcal{N}(x \mid \mu_y, \Sigma_y)
 $$
 
 ### Training
 For each class $y$:
-- Estimate $\mu_y$
-- Estimate $\Sigma_y$
+- Estimate mean: $\mu_y$
+- Estimate variance: $\Sigma_y$
 
 ### Inference
 
