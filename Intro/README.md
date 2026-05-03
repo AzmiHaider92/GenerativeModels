@@ -6,6 +6,12 @@ A discriminative model learns:
 ```
 P(y | x)
 ```
+
+\begin{aligned}
+  P(y | x)
+\end{aligned}
+
+
 Given an input x, it directly predicts the label y.
 
 Goal: learn decision boundaries between classes.
