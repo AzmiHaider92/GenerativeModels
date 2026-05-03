@@ -47,7 +47,7 @@ y_hat = argmax_y P(x | y)
 
 Assume each class follows a Gaussian:
 ```
-P(x | y) = N(x | μ_y, Σ_y)
+P(x | y) = N(x | $μ_y$, $Σ_y$)
 ```
 ### Training
 For each class y:
