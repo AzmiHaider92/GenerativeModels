@@ -93,3 +93,6 @@ $$
 
 > A generative model classifies by asking:  
 > **"Which class is most likely to have generated this data?"**
+
+
+[← Back to Main Repository](../README.md)
