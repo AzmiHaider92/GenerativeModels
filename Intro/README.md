@@ -4,7 +4,7 @@
 
 A discriminative model learns:
 ```
-$$P(y | x)$$
+P(y | x)
 ```
 Given an input x, it directly predicts the label y.
 
