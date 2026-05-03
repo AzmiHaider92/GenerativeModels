@@ -1,14 +1,41 @@
 # GenerativeModels  
 
-Hello world,  
-As part of the course "Deep generative models", I implemented 4 different generative models.    
-I reccommend openning the notebook files (.ipynb) in google colab to see the already produced results and figures.
-
-DGM_x5. VAE    
-DGM_x7. DDPM    
-
-Each has a notebook solution.  
+1. Introduction
+2. Introduction to Probabilistic Modeling
+3. Autoregressive Models
+4. Maximum Likelihood Learning
+5. Latent Variable Models
+6. Learning Latent Variable Models
+7. Normalizing Flows
+8. Advanced Flow Models
+9. Generative Adversarial Networks
+10. Energy-Based Models
+11. Score-Based Models
+12. Diffusion Models
+13. Advanced Diffusion Models
+14. Evaluating Generative Models
+15. Combining Generative Model Families
+16. Discrete Deep Generative Models
+17. Probabilistic Reasoning
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 # 1. Autoregressive Model:    
 Project description: DGM_x4.  
