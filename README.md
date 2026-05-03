@@ -1,6 +1,6 @@
 # GenerativeModels  
 
-1. Introduction[Introduction](/Intro/README.md)
+1. [Introduction](/Intro/README.md)
 
 2. Introduction to Probabilistic Modeling
 3. Autoregressive Models
