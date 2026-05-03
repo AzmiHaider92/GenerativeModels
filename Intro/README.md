@@ -50,9 +50,7 @@ $$
 \hat{y} = \arg\max_y P(x \mid y)
 $$
 
----
-
-## Example: Gaussian Naive Bayes
+### Example: Gaussian Naive Bayes
 
 Assume:
 
