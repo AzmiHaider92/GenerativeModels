@@ -1,6 +1,7 @@
 # GenerativeModels  
 
-1. Introduction
+1. Introduction[Introduction](/Intro/README.md)
+
 2. Introduction to Probabilistic Modeling
 3. Autoregressive Models
 4. Maximum Likelihood Learning
