@@ -2,7 +2,7 @@
 
 ### Discriminative Models
 
-A discriminative model learns:
+A discriminative model learns the conditional distribution:
 
 $$
 P(y \mid x)
@@ -16,7 +16,7 @@ Given an input $x$, it directly predicts the label $y$.
 
 ### Generative Models
 
-A generative model learns:
+A generative model learns the data distribution:
 
 $$
 P(x, y) = P(x \mid y) P(y)
