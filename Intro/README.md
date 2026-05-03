@@ -3,9 +3,9 @@
 ### Discriminative Models
 
 A discriminative model learns:
-
+```
 $P(y | x)$
-
+```
 Given an input x, it directly predicts the label y.
 
 Goal: learn decision boundaries between classes.
