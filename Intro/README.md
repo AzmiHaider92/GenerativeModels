@@ -51,8 +51,8 @@ P(x | y) = N(x | μ_y, Σ_y)
 ```
 ### Training
 For each class y:
-- Compute mean μ_y
-- Compute covariance Σ_y
+- Compute mean $$μ_y$$
+- Compute covariance $$Σ_y$$
 
 ### Inference
 Given a new sample x:
