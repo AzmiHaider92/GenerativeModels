@@ -2,7 +2,7 @@
 
 ### Discriminative Models
 
-A discriminative model learns the conditional distribution:
+A discriminative model learns the conditional distribution (Posterior):
 
 $$
 P(y \mid x)
@@ -23,7 +23,7 @@ P(x, y) = P(x \mid y) P(y)
 $$
 
 That means:
-- $P(x \mid y)$: what data looks like for each class  
+- $P(x \mid y)$: what data looks like for each class (Likelihood)
 - $P(y)$: class prior  
 
 **Goal:** model how the data is generated.
@@ -32,13 +32,13 @@ That means:
 
 ## Using a Generative Model for Classification
 
-Using Bayes' rule:
+We can recover the discriminative quantity using Bayes’ rule:
 
 $$
 P(y \mid x) = \frac{P(x \mid y) P(y)}{P(x)}
 $$
 
-For prediction:
+For classification:
 
 $$
 \hat{y} = \arg\max_y P(x \mid y) P(y)
