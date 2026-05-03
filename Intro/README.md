@@ -57,7 +57,7 @@ Assume:
 - Images are vectors $x∈R^d$ (flattened pixels)
 - Labels $y∈{0,…,9}$
   
-We model:
+We model $P(x \mid y)$ using a Gaussian per class::
 
 $$
 P(x \mid y) = \mathcal{N}(x \mid \mu_y, \Sigma_y)
