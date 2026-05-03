@@ -58,6 +58,7 @@ Assume:
 - Labels $y∈{0,…,9}$
   
 We model:
+
 $$
 P(x \mid y) = \mathcal{N}(x \mid \mu_y, \Sigma_y)
 $$
