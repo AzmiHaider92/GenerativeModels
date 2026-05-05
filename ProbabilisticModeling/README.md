@@ -219,6 +219,9 @@ $$
 
 ---
 
-## 14. Next Lecture
 
-👉 Autoregressive Models
+[← Go to Previous Repository - Probabilistic Modeling](../ProbabilisticModeling/README.md)
+
+[→ Go to Next Repository - Auto Regressive Models](../AutoRegressiveModels/README.md)
+
+[← Back to Main Repository](../README.md)
