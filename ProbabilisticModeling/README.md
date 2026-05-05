@@ -28,14 +28,14 @@ $$
 (R, G, B), \quad R,G,B \in \{0, \dots, 255\}
 $$
 
-Number of possible colors:
+Number of possible colors for a pixel:
 
 $$
 256^3
 $$
 
 To define the distribution:
-- Assign a probability to each $(r,g,b)$
+- Assign a probability to each $(r,g,b)$ - one parameter for each (r,g,b) value.
 - Probabilities must sum to 1
 
 Number of parameters:
