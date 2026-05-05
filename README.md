@@ -2,7 +2,7 @@
 
 1. [Introduction](/Intro/README.md)
 
-2. Introduction to Probabilistic Modeling
+2. [Probabilistic Modeling](/Probabilistic Modeling/README.md)
 3. Autoregressive Models
 4. Maximum Likelihood Learning
 5. Latent Variable Models
