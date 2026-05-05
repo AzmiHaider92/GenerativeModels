@@ -95,7 +95,7 @@ $$
 > **"Which class is most likely to have generated this data?"**
 
 
-[← Go to Next Repository - ProbabilisticModeling](../ProbabilisticModeling/README.md)
+[← Go to Next Repository - Probabilistic Modeling](../ProbabilisticModeling/README.md)
 
 [← Back to Main Repository](../README.md)
 
