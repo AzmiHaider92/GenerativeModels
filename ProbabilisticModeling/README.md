@@ -5,11 +5,13 @@
 Probabilistic modeling defines a **distribution over data**.
 
 For a random variable:
+
 $$
 p(X)
 $$
 
 For multiple variables:
+
 $$
 p(x_1, x_2, \dots, x_n)
 $$
