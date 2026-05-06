@@ -486,12 +486,7 @@ $$
 Combined:
 
 $$
-\mathcal{L} =
-- \left[
-x_i \log p_i
-+
-(1-x_i)\log(1-p_i)
-\right]
+\mathcal{L} = - \left[ x_i \log p_i + (1-x_i)\log(1-p_i) \right]
 $$
 
 This is Binary Cross Entropy (BCE).
