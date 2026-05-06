@@ -276,6 +276,9 @@ Examples:
 - MADE → masked linear layers
 - GPT → masked self-attention
 
+![autoregressive_image_modeling](https://wiki.math.uwaterloo.ca/statwiki/images/thumb/5/5b/xi_img.png/500px-xi_img.png)  
+
+
 ---
 
 # 8. Multiple Hidden Layers
