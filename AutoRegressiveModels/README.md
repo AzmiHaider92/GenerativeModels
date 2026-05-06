@@ -1,4 +1,4 @@
-# Autoregressive Models from Logistic Regression
+# Autoregressive Models
 
 # 1. Logistic Regression
 
