@@ -290,9 +290,9 @@ future information could leak indirectly through hidden neurons.
 
 Example:
 
-- hidden neuron \(h_1^{(1)}\) sees future pixel \(x_5\)
-- another hidden neuron in layer 2 reads from \(h_1^{(1)}\)
-- output for \(x_3\) reads from layer 2
+- hidden neuron $\(h_1^{(1)}\)$ sees future pixel $\(x_5\)$
+- another hidden neuron in layer 2 reads from $\(h_1^{(1)}\)$
+- output for $\(x_3\)$ reads from layer 2
 
 Now:
 
@@ -308,7 +308,6 @@ $$
 
 which violates autoregressive ordering.
 
----
 
 ## The Solution: Degrees
 
@@ -356,7 +355,6 @@ $$
 
 Degrees are assigned to hidden neurons to control which pixels they may access.
 
----
 
 ## Masking Between Layers
 
@@ -398,7 +396,7 @@ $$
 x_1,\dots,x_{i-1}
 $$
 
----
+
 
 ## Final Result
 
@@ -444,9 +442,7 @@ Generation process:
 4. sample
 5. repeat
 
----
-
-# 10. RNN Pros and Cons
+# RNN Pros and Cons
 
 ## Pros
 
@@ -467,7 +463,7 @@ Transformers later replaced recurrence with masked attention.
 
 ---
 
-# 11. PixelCNN
+# 10. PixelCNN
 
 # Important Insight
 
@@ -497,7 +493,6 @@ $$
 
 using softmax logits.
 
----
 
 # Training Objective
 
@@ -517,7 +512,7 @@ Equivalently:
 
 > minimize Negative Log Likelihood (NLL).
 
----
+
 
 # Binary Pixel Example
 
@@ -567,7 +562,7 @@ $$
 
 loss becomes very large.
 
----
+
 
 ## If Ground Truth Is Zero
 
@@ -589,7 +584,7 @@ $$
 -\log(1-p_i)
 $$
 
----
+
 
 # Binary Cross Entropy (BCE)
 
@@ -605,7 +600,6 @@ Importantly:
 
 > BCE is simply the negative log likelihood of a Bernoulli distribution.
 
----
 
 # Full Image Loss
 
@@ -631,7 +625,7 @@ $$
 
 The model learns all conditional distributions simultaneously.
 
----
+
 
 # Sampling
 
@@ -645,7 +639,6 @@ $$
 
 unknown.
 
----
 
 ## First Pixel
 
@@ -679,7 +672,6 @@ $$
 x=[1, ?, ?, \dots]
 $$
 
----
 
 ## Next Pixel
 
@@ -757,3 +749,13 @@ Generation works by:
 4. repeating sequentially
 
 This is the foundation of autoregressive generative modeling.
+
+
+
+
+
+[← Go to Previous Repository - Probabilistic Modeling](../ProbabilisticModeling/README.md)
+
+→ Go to Previous Repository - Auto Regressive Models
+
+[← Back to Main Repository](../README.md)
