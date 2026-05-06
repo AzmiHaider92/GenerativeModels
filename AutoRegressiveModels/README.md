@@ -486,10 +486,8 @@ $$
 Combined:
 
 $$
-\mathcal{L}
-=
--
-\left[
+\mathcal{L} =
+- \left[
 x_i \log p_i
 +
 (1-x_i)\log(1-p_i)
@@ -511,16 +509,14 @@ $$
 taking log gives:
 
 $$
-\log P(x)
-=
+\log P(x) =
 \sum_i \log P(x_i \mid x_{\lt i})
 $$
 
 Final training loss:
 
 $$
-\mathcal{L}
-=
+\mathcal{L} =
 -\sum_i \log P_\theta(x_i \mid x_{\lt i})
 $$
 
