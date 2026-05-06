@@ -74,9 +74,7 @@ $$
 we use:
 
 $$
-P_\theta(x_2=1 \mid x_1)
-=
-\sigma(wx_1+b)
+P_\theta(x_2=1 \mid x_1) = \sigma(wx_1+b)
 $$
 
 Parameters:
