@@ -54,9 +54,8 @@ $$
 
 using logistic regression:
 
-$$
-P_\theta(x_2=1 \mid x_1)
-=
+$$ 
+P_\theta(x_2=1 \mid x_1) =
 \sigma(wx_1+b)
 $$
 
