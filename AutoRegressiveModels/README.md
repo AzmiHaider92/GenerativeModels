@@ -341,9 +341,9 @@ $$
 
 Interpretation:
 
-- neuron with degree 1 may only depend on \(x_1\)
-- degree 2 may depend on \(x_1,x_2\)
-- degree 3 may depend on \(x_1,x_2,x_3\)
+- neuron with degree 1 may only depend on $\(x_1\)$
+- degree 2 may depend on $\(x_1,x_2\)$
+- degree 3 may depend on $\(x_1,x_2,x_3\)$
 
 The degree is NOT assigned to pixels.
 
