@@ -75,9 +75,7 @@ $$
 we use:
 
 $$
-P_\theta(x_2=1 \mid x_1)
-=
-\sigma(wx_1+b)
+P_\theta(x_2=1 \mid x_1) = \sigma(wx_1+b)
 $$
 
 Parameters:
@@ -105,10 +103,8 @@ $$
 
 we use:
 
-$$
-P_\theta(x_3=1 \mid x_1,x_2)
-=
-\sigma(w_1x_1+w_2x_2+b)
+$$ 
+P_\theta(x_3=1 \mid x_1,x_2) = \sigma(w_1x_1+w_2x_2+b)
 $$
 
 Parameters:
@@ -143,9 +139,7 @@ $$
 we use:
 
 $$
-P_\theta(x_n=1 \mid x_{<n})
-=
-\sigma\left(\sum_{i=1}^{n-1} w_i x_i + b\right)
+P_\theta(x_n=1 \mid x_{<n}) = \sigma\left(\sum_{i=1}^{n-1} w_i x_i + b\right)
 $$
 
 Number of parameters:
@@ -168,9 +162,7 @@ parameters.
 Using the chain rule:
 
 $$
-P(x_1,\dots,x_n)
-=
-\prod_{i=1}^n P(x_i \mid x_{<i})
+P(x_1,\dots,x_n) = \prod_{i=1}^n P(x_i \mid x_{<i})
 $$
 
 The model predicts pixels sequentially.
