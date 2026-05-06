@@ -275,25 +275,146 @@ Examples:
 
 # 8. Multiple Hidden Layers
 
-With multiple hidden layers, information could leak indirectly from future pixels.
+With a single masked layer, preventing future information leakage is simple:
 
-To prevent this, hidden neurons are assigned degrees.
+- remove illegal connections
+- future pixels cannot influence current predictions
 
-A neuron with degree \(k\) may only depend on:
+But with multiple hidden layers:
 
 $$
-x_1,\dots,x_k
+x \rightarrow h^{(1)} \rightarrow h^{(2)} \rightarrow output
 $$
 
-Connections are only allowed if ordering constraints are respected.
+future information could leak indirectly through hidden neurons.
 
-This preserves:
+Example:
+
+- hidden neuron \(h_1^{(1)}\) sees future pixel \(x_5\)
+- another hidden neuron in layer 2 reads from \(h_1^{(1)}\)
+- output for \(x_3\) reads from layer 2
+
+Now:
+
+$$
+x_3
+$$
+
+indirectly depends on future pixel:
+
+$$
+x_5
+$$
+
+which violates autoregressive ordering.
+
+---
+
+## The Solution: Degrees
+
+To prevent leakage, each hidden neuron is assigned a degree.
+
+The degree determines:
+
+> the largest pixel index this neuron is allowed to depend on.
+
+Suppose pixels are ordered:
+
+$$
+x_1,x_2,x_3,x_4
+$$
+
+Now assign degrees to hidden neurons.
+
+Example:
+
+$$
+m(h_1)=1
+$$
+
+$$
+m(h_2)=2
+$$
+
+$$
+m(h_3)=3
+$$
+
+Interpretation:
+
+- neuron with degree 1 may only depend on \(x_1\)
+- degree 2 may depend on \(x_1,x_2\)
+- degree 3 may depend on \(x_1,x_2,x_3\)
+
+The degree is NOT assigned to pixels.
+
+Pixels already have a natural ordering:
+
+$$
+x_1 < x_2 < x_3 < \dots
+$$
+
+Degrees are assigned to hidden neurons to control which pixels they may access.
+
+---
+
+## Masking Between Layers
+
+Connections are only allowed if they preserve ordering.
+
+A connection from neuron \(a\) to neuron \(b\) is allowed only if:
+
+$$
+m(a) \le m(b)
+$$
+
+This ensures information can only flow forward in the allowed autoregressive direction.
+
+---
+
+## Output Layer
+
+To predict:
+
+$$
+x_i
+$$
+
+the output neuron may only connect to hidden neurons whose degree is strictly smaller than:
+
+$$
+i
+$$
+
+because:
+
+$$
+x_i
+$$
+
+may only depend on:
+
+$$
+x_1,\dots,x_{i-1}
+$$
+
+---
+
+## Final Result
+
+Even with many hidden layers:
+
+$$
+x \rightarrow h^{(1)} \rightarrow h^{(2)} \rightarrow \dots \rightarrow output
+$$
+
+future pixels can never leak backward.
+
+The network still correctly models:
 
 $$
 P(x_i \mid x_{\lt i})
 $$
-
-throughout the entire network.
 
 ---
 
@@ -346,7 +467,154 @@ Transformers later replaced recurrence with masked attention.
 
 ---
 
-# 11. PixelCNN Training
+# 14. PixelCNN
+
+# Important Insight
+
+PixelCNN does NOT directly generate pixel values.
+
+Instead, the network outputs:
+
+> parameters of probability distributions.
+
+For binary pixels:
+
+the network outputs:
+
+$$
+p_i = P_\theta(x_i=1 \mid x_{\lt i})
+$$
+
+which is the Bernoulli probability for the next pixel.
+
+For grayscale images:
+
+the network outputs probabilities over:
+
+$$
+0,\dots,255
+$$
+
+using softmax logits.
+
+---
+
+# Training Objective
+
+During training:
+
+- the full image is already known
+- the model predicts probability distributions for every pixel simultaneously
+- we compare the predicted probabilities against the true pixel values
+
+The goal is:
+
+> assign high probability to the correct observed pixel.
+
+This is Maximum Likelihood Estimation (MLE).
+
+Equivalently:
+
+> minimize Negative Log Likelihood (NLL).
+
+---
+
+# Binary Pixel Example
+
+Suppose:
+
+$$
+x_i \in \{0,1\}
+$$
+
+The network predicts:
+
+$$
+p_i=P_\theta(x_i=1 \mid x_{\lt i})
+$$
+
+Suppose the true pixel value is:
+
+$$
+x_i=1
+$$
+
+Then the model should assign high probability to:
+
+$$
+x_i=1
+$$
+
+Loss:
+
+$$
+-\log p_i
+$$
+
+If:
+
+$$
+p_i=0.99
+$$
+
+loss is very small.
+
+If:
+
+$$
+p_i=0.01
+$$
+
+loss becomes very large.
+
+---
+
+## If Ground Truth Is Zero
+
+Suppose:
+
+$$
+x_i=0
+$$
+
+Then the correct probability is:
+
+$$
+P_\theta(x_i=0 \mid x_{\lt i}) = 1-p_i
+$$
+
+Loss becomes:
+
+$$
+-\log(1-p_i)
+$$
+
+---
+
+# Binary Cross Entropy (BCE)
+
+Combining both cases:
+
+$$
+\mathcal{L}
+=
+-
+\left[
+x_i \log p_i
++
+(1-x_i)\log(1-p_i)
+\right]
+$$
+
+This is Binary Cross Entropy.
+
+Importantly:
+
+> BCE is simply the negative log likelihood of a Bernoulli distribution.
+
+---
+
+# Full Image Loss
 
 PixelCNN models:
 
@@ -354,18 +622,29 @@ $$
 P(x)=\prod_i P(x_i \mid x_{\lt i})
 $$
 
-using masked convolutions.
+Taking log:
 
-During training:
+$$
+\log P(x)
+=
+\sum_i \log P(x_i \mid x_{\lt i})
+$$
 
-- the full image is given
-- all conditionals are predicted simultaneously
+Total training loss:
+
+$$
+\mathcal{L}
+=
+-\sum_i \log P_\theta(x_i \mid x_{\lt i})
+$$
+
+The model learns all conditional distributions simultaneously.
 
 ---
 
-# 12. PixelCNN Sampling
+# Sampling
 
-Sampling is sequential.
+Sampling is sequential because future pixels depend on previous sampled pixels.
 
 Initially:
 
@@ -373,9 +652,13 @@ $$
 x=[?, ?, ?, \dots]
 $$
 
+unknown.
+
+---
+
 ## First Pixel
 
-Model predicts:
+The network predicts:
 
 $$
 P(x_1)
@@ -387,7 +670,7 @@ $$
 P(x_1=1)=0.7
 $$
 
-Then sample:
+Now we sample:
 
 $$
 x_1 \sim \text{Bernoulli}(0.7)
@@ -399,7 +682,7 @@ $$
 x_1=1
 $$
 
-Now:
+Now the partially generated image becomes:
 
 $$
 x=[1, ?, ?, \dots]
@@ -409,7 +692,9 @@ $$
 
 ## Next Pixel
 
-Model predicts:
+Run the network again.
+
+Now it predicts:
 
 $$
 P(x_2 \mid x_1)
@@ -421,99 +706,47 @@ $$
 x_2 \sim P(x_2 \mid x_1)
 $$
 
-Repeat sequentially until the full image is generated.
-
----
-
-# 13. Important Insight
-
-The network does NOT output the pixel itself.
-
-It outputs:
-
-> parameters of a probability distribution.
-
-Examples:
-
-- Bernoulli probability for binary pixels
-- softmax logits for grayscale values
-- distributions over RGB channels
-
-Sampling happens separately.
-
----
-
-# 14. Training Objective
-
-The model learns by maximizing probability assigned to the true pixel value.
-
-Equivalent to minimizing negative log likelihood.
-
----
-
-## Binary Pixel Loss
-
 Suppose:
 
 $$
-p_i=P_\theta(x_i=1 \mid x_{\lt i})
+x_2=0
 $$
 
-If ground truth is:
+Now:
 
 $$
-x_i=1
+x=[1,0,?, ?, \dots]
 $$
 
-loss is:
+Continue sequentially:
 
 $$
--\log p_i
+x_3 \sim P(x_3 \mid x_1,x_2)
 $$
 
-If:
-
 $$
-x_i=0
+x_4 \sim P(x_4 \mid x_1,x_2,x_3)
 $$
 
-loss is:
-
-$$
--\log(1-p_i)
-$$
-
-Combined:
-
-$$
-\mathcal{L} = - \left[ x_i \log p_i + (1-x_i)\log(1-p_i) \right]
-$$
-
-This is Binary Cross Entropy (BCE).
+until the full image is generated.
 
 ---
 
-# 15. Full Image Loss
+# Important Sampling Insight
 
-Since:
+The network never outputs the final image directly.
 
-$$
-P(x)=\prod_i P(x_i \mid x_{\lt i})
-$$
+At every step it outputs:
 
-taking log gives:
+> a probability distribution for the next pixel.
 
-$$
-\log P(x) =
-\sum_i \log P(x_i \mid x_{\lt i})
-$$
+Generation is produced by repeatedly:
 
-Final training loss:
+1. predicting a distribution
+2. sampling from it
+3. inserting the sampled pixel back into the image
+4. repeating sequentially
 
-$$
-\mathcal{L} =
--\sum_i \log P_\theta(x_i \mid x_{\lt i})
-$$
 
 ---
 
