@@ -104,8 +104,7 @@ $$
 we use:
 
 $$
-P_\theta(x_3=1 \mid x_1,x_2)
-=
+P_\theta(x_3=1 \mid x_1,x_2) =
 \sigma(w_1x_1+w_2x_2+b)
 $$
 
