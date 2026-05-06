@@ -128,19 +128,19 @@ parameters.
 For:
 
 $$
-P(x_n \mid x_{<n})
+P(x_n \mid x_{\lt n})
 $$
 
 where:
 
 $$
-x_{<n}=(x_1,\dots,x_{n-1})
+x_{\lt n}=(x_1,\dots,x_{n-1})
 $$
 
 we use:
 
 $$
-P_\theta(x_n=1 \mid x_{<n}) =
+P_\theta(x_n=1 \mid x_{\lt n}) =
 \sigma\left(\sum_{i=1}^{n-1} w_i x_i + b\right)
 $$
 
