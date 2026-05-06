@@ -140,8 +140,7 @@ $$
 we use:
 
 $$
-P_\theta(x_n=1 \mid x_{<n})
-=
+P_\theta(x_n=1 \mid x_{<n}) =
 \sigma\left(\sum_{i=1}^{n-1} w_i x_i + b\right)
 $$
 
@@ -165,8 +164,7 @@ parameters.
 Using the chain rule:
 
 $$
-P(x_1,\dots,x_n)
-=
+P(x_1,\dots,x_n) =
 \prod_{i=1}^n P(x_i \mid x_{<i})
 $$
 
