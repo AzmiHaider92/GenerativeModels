@@ -467,7 +467,7 @@ Transformers later replaced recurrence with masked attention.
 
 ---
 
-# 14. PixelCNN
+# 11. PixelCNN
 
 # Important Insight
 
@@ -596,14 +596,7 @@ $$
 Combining both cases:
 
 $$
-\mathcal{L}
-=
--
-\left[
-x_i \log p_i
-+
-(1-x_i)\log(1-p_i)
-\right]
+\mathcal{L} = - \left[ x_i \log p_i + (1-x_i)\log(1-p_i) \right]
 $$
 
 This is Binary Cross Entropy.
@@ -625,16 +618,14 @@ $$
 Taking log:
 
 $$
-\log P(x)
-=
+\log P(x) =
 \sum_i \log P(x_i \mid x_{\lt i})
 $$
 
 Total training loss:
 
 $$
-\mathcal{L}
-=
+\mathcal{L} =
 -\sum_i \log P_\theta(x_i \mid x_{\lt i})
 $$
 
