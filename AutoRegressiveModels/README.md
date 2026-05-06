@@ -165,7 +165,7 @@ Using the chain rule:
 
 $$
 P(x_1,\dots,x_n) =
-\prod_{i=1}^n P(x_i \mid x_{<i})
+\prod_{i=1}^n P(x_i \mid x_{\lt i})
 $$
 
 The model predicts pixels sequentially.
@@ -242,7 +242,7 @@ where:
 The model becomes:
 
 $$
-P_\theta(x_i \mid x_{<i})
+P_\theta(x_i \mid x_{\lt i})
 $$
 
 with shared neural features.
@@ -256,7 +256,7 @@ This allows the network to learn reusable visual patterns.
 Autoregressive models must obey:
 
 $$
-x_i \text{ can only depend on } x_{<i}
+x_i \text{ can only depend on } x_{\lt i}
 $$
 
 Future pixels are forbidden.
@@ -290,7 +290,7 @@ Connections are only allowed if ordering constraints are respected.
 This preserves:
 
 $$
-P(x_i \mid x_{<i})
+P(x_i \mid x_{\lt i})
 $$
 
 throughout the entire network.
@@ -351,7 +351,7 @@ Transformers later replaced recurrence with masked attention.
 PixelCNN models:
 
 $$
-P(x)=\prod_i P(x_i \mid x_{<i})
+P(x)=\prod_i P(x_i \mid x_{\lt i})
 $$
 
 using masked convolutions.
@@ -456,7 +456,7 @@ Equivalent to minimizing negative log likelihood.
 Suppose:
 
 $$
-p_i=P_\theta(x_i=1 \mid x_{<i})
+p_i=P_\theta(x_i=1 \mid x_{\lt i})
 $$
 
 If ground truth is:
@@ -505,7 +505,7 @@ This is Binary Cross Entropy (BCE).
 Since:
 
 $$
-P(x)=\prod_i P(x_i \mid x_{<i})
+P(x)=\prod_i P(x_i \mid x_{\lt i})
 $$
 
 taking log gives:
@@ -513,7 +513,7 @@ taking log gives:
 $$
 \log P(x)
 =
-\sum_i \log P(x_i \mid x_{<i})
+\sum_i \log P(x_i \mid x_{\lt i})
 $$
 
 Final training loss:
@@ -521,7 +521,7 @@ Final training loss:
 $$
 \mathcal{L}
 =
--\sum_i \log P_\theta(x_i \mid x_{<i})
+-\sum_i \log P_\theta(x_i \mid x_{\lt i})
 $$
 
 ---
