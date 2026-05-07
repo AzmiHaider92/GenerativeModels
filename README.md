@@ -6,8 +6,9 @@
 
 [3. Autoregressive Models](/AutoRegressiveModels/README.md)
 
+[4. Maximum Likelihood Learning](/MLLearning/README.md)
 
-4. Maximum Likelihood Learning
+
 5. Latent Variable Models
 6. Learning Latent Variable Models
 7. Normalizing Flows
