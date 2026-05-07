@@ -756,6 +756,6 @@ This is the foundation of autoregressive generative modeling.
 
 [← Go to Previous Repository - Probabilistic Modeling](../ProbabilisticModeling/README.md)
 
-→ Go to Previous Repository - Auto Regressive Models
+[→ Go to Next Repository - Maximum Likelihood Learning](../MLLearning/README.md)
 
 [← Back to Main Repository](../README.md)
