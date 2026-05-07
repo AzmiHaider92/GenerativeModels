@@ -101,10 +101,7 @@ Deep learning usually minimizes losses instead of maximizing objectives.
 So we define:
 
 $$
-\mathcal{L}_{NLL} =
--
-\sum_{i=1}^N
-\log P_\theta(x^{(i)})
+\mathcal{L}_{NLL} = - \sum_{i=1}^N \log P_\theta(x^{(i)})
 $$
 
 This is the **Negative Log Likelihood (NLL)**.
@@ -307,9 +304,7 @@ $$
 Rewrite:
 
 $$
-=
-H(P_{data})
--
+= H(P_{data}) -
 \mathbb{E}_{x\sim P_{data}}
 [\log P_\theta(x)]
 $$
@@ -572,9 +567,7 @@ For simple models like coin tosses, we can solve analytically.
 But autoregressive neural networks are extremely complicated:
 
 $$
-P_\theta(x) =
-\prod_{i=1}^N
-P_\theta(x_i|x_{<i})
+P_\theta(x) = \prod_{i=1}^N P_\theta(x_i|x_{\lt i})
 $$
 
 No closed-form solution exists.
