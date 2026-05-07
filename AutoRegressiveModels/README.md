@@ -750,9 +750,7 @@ Generation works by:
 
 This is the foundation of autoregressive generative modeling.
 
-
-
-
+---
 
 [← Go to Previous Repository - Probabilistic Modeling](../ProbabilisticModeling/README.md)
 
