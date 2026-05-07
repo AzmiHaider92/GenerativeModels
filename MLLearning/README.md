@@ -308,7 +308,7 @@ KL-divergence measures:
 
 ---
 
-# 5. Connection Between KL and Maximum Likelihood
+## Connection Between KL and Maximum Likelihood
 
 Start from:
 
@@ -357,7 +357,7 @@ This is exactly Maximum Likelihood Learning.
 
 ---
 
-# 6. KL vs Maximum Likelihood
+## KL vs Maximum Likelihood
 
 MLE initially looks like:
 
@@ -396,7 +396,7 @@ MLE comes from KL-divergence.
 
 ---
 
-# 7. Monte Carlo Estimation
+# 3. Monte Carlo Estimation
 
 ## Expectations
 
@@ -412,7 +412,7 @@ $$
 
 means:
 
-> Average value of $f(x)$ when sampling from $P(x)$.
+> Average value of $f(x)$ when sampling from $P(x)$ infinite times.
 
 ---
 
@@ -427,7 +427,7 @@ $$
 
 But:
 - we do not know $P_{data}$ explicitly
-- only samples from it
+- only samples from it (the dataset contained data samples only)
 
 ---
 
@@ -469,7 +469,7 @@ which becomes Maximum Likelihood Learning.
 
 ---
 
-# 8. Monte Carlo Bias and Variance
+## Monte Carlo Bias and Variance
 
 ## Bias
 
@@ -503,7 +503,7 @@ Meaning:
 
 ---
 
-# 9. Coin Toss MLE Example
+### Coin Toss MLE Example
 
 Suppose dataset:
 
@@ -583,13 +583,13 @@ $$
 
 ---
 
-# 10. Gradient Descent and SGD
+# 4. Gradient Descent and SGD
 
 ## Why We Need Gradient Descent
 
 For simple models like coin tosses, we can solve analytically.
 
-But autoregressive neural networks are extremely complicated:
+But some model families, autoregressive neural networks for example, are extremely complicated:
 
 $$
 P_\theta(x) = \prod_{i=1}^N P_\theta(x_i|x_{\lt i})
@@ -658,7 +658,7 @@ This is a Monte Carlo estimate of the true loss.
 
 ---
 
-# 11. Bias–Variance Tradeoff
+# 5. Bias–Variance Tradeoff
 
 ## Bias
 
@@ -762,3 +762,13 @@ This leads to:
 - MSE
 
 which are all connected through Maximum Likelihood Learning.
+
+---
+
+[← Go to Previous Repository - Maximum Likelihood Learning](../MLLearning/README.md)
+
+[→ Go to Next Repository - TBD](TBD)
+
+[← Back to Main Repository](../README.md)
+
+
