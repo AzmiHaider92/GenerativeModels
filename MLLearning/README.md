@@ -64,12 +64,6 @@ $$
 \log \prod_{i=1}^N P_\theta(x^{(i)})
 $$
 
-Using:
-
-$$
-\log(ab)=\log a+\log b
-$$
-
 we get:
 
 $$
@@ -110,19 +104,50 @@ This is the **Negative Log Likelihood (NLL)**.
 
 ## Connection to Cross Entropy
 
-For classification:
+In classification, the model predicts class probabilities using a softmax output:
 
 $$
-P_\theta(y|x)
+P_\theta(y=c|x) =
+\text{softmax}(z_c)
 $$
 
-with softmax outputs, minimizing cross entropy is exactly maximizing likelihood.
+where $z_c$ are the logits produced by the neural network.
 
-Cross entropy is a special case of NLL.
+Suppose the true label is represented using one-hot encoding:
+
+$$
+y=[1,0,0,\dots]
+$$
+
+and the model prediction is:
+
+$$
+\hat y=[0.7,0.2,0.1,\dots]
+$$
+
+The cross entropy loss is:
+
+$$
+\mathcal{L} =
+-\sum_{c=1}^C y_c \log \hat y_c
+$$
+
+Since only the correct class has $y_c=1$, all other terms disappear:
+
+$$
+\mathcal{L} =
+-\log P_\theta(y_{\text{true}}|x)
+$$
+
+This is exactly the **Negative Log Likelihood (NLL)**.
+
+Therefore:
+
+> Minimizing cross entropy is exactly maximizing the likelihood of the correct class.
 
 ---
 
-# 2. Bernoulli Example → Binary Cross Entropy (BCE)
+## Bernoulli Example → Binary Cross Entropy (BCE)
 
 Suppose:
 
@@ -162,7 +187,7 @@ This is exactly the **Binary Cross Entropy (BCE)** loss.
 
 ---
 
-# 3. Gaussian Example → Mean Squared Error (MSE)
+## Gaussian Example → Mean Squared Error (MSE)
 
 Suppose:
 
@@ -195,7 +220,7 @@ Therefore:
 
 ---
 
-# 4. KL-Divergence
+# 2. KL-Divergence
 
 ## Why Do We Need KL-Divergence?
 
