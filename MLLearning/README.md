@@ -765,7 +765,7 @@ which are all connected through Maximum Likelihood Learning.
 
 ---
 
-[← Go to Previous Repository - Maximum Likelihood Learning](../MLLearning/README.md)
+[← Go to Previous Repository - Auto regressive models](../AutoRegressiveModels/README.md)
 
 [→ Go to Next Repository - Latent Variable models](../LatentVariableModels/README.md)
 
