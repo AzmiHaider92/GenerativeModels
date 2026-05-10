@@ -410,8 +410,7 @@ $$
 Create masked image:
 
 $$
-\tilde{x}
-=
+\tilde{x} =
 \begin{bmatrix}
 0 \\
 0 \\
