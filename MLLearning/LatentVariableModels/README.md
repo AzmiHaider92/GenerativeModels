@@ -479,3 +479,12 @@ to approximate the true posterior.
 - ELBO is derived using Jensen's inequality.
 - Maximizing ELBO approximates maximum likelihood learning.
 - VAEs are deep latent variable models trained with the ELBO objective.
+
+---
+
+[← Go to Previous Repository - MLLearning](../MLLearning/README.md)
+
+[→ Go to Next Repository - TBD]
+
+[← Back to Main Repository](../README.md)
+
