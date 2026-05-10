@@ -767,7 +767,7 @@ which are all connected through Maximum Likelihood Learning.
 
 [← Go to Previous Repository - Maximum Likelihood Learning](../MLLearning/README.md)
 
-[→ Go to Next Repository - TBD](TBD)
+[→ Go to Next Repository - Latent Variable models](../LatentVariableModels/README.md)
 
 [← Back to Main Repository](../README.md)
 
