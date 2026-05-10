@@ -8,6 +8,8 @@
 
 [4. Maximum Likelihood Learning](/MLLearning/README.md)
 
+[5. Latent Variable Models](/LatentVariableModels/README.md)
+
 
 5. Latent Variable Models
 6. Learning Latent Variable Models
