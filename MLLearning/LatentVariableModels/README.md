@@ -177,8 +177,7 @@ $$
 where the true posterior is:
 
 $$
-P_\theta(z|x)
-=
+P_\theta(z|x) =
 \frac{P_\theta(x,z)}{P_\theta(x)}
 $$
 
@@ -205,8 +204,7 @@ $$
 Rewrite as expectation:
 
 $$
-=
-\log
+= \log
 \mathbb{E}_{q_\phi(z|x)}
 \left[
 \frac{P_\theta(x,z)}{q_\phi(z|x)}
