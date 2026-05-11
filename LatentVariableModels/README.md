@@ -977,7 +977,7 @@ into a practical generative model.
 
 ---
 
-[← Go to Previous Repository - Latent Variable Models](../LatentVariableModels/README.md)
+[← Go to Previous Repository - Maximum Likelihood Learning](../MLLearning/README.md)
 
 [→ Go to Next Repository - TBD]
 
