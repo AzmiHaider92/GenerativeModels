@@ -1,9 +1,11 @@
 # GenerativeModels  
 
 Based on the lectures of Volodymyr Kuleshov:
-https://www.youtube.com/watch?v=IZgvgLy1wyg&list=PL2UML_KCiC0UPzjW9BjO-IW6dqliu9O4B
+
+[![Watch the playlist](https://img.youtube.com/vi/IZgvgLy1wyg/maxresdefault.jpg)](https://www.youtube.com/watch?v=IZgvgLy1wyg&list=PL2UML_KCiC0UPzjW9BjO-IW6dqliu9O4B)
 
 
+---
 
 [1. Introduction](/Intro/README.md)
 
