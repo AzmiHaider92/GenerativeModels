@@ -220,7 +220,7 @@ $$
 ---
 
 
-[← Go to Previous Repository - Probabilistic Modeling](../ProbabilisticModeling/README.md)
+[← Go to Previous Repository - Intro](../Intro/README.md)
 
 [→ Go to Next Repository - Auto Regressive Models](../AutoRegressiveModels/README.md)
 
