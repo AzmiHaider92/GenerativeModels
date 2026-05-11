@@ -8,9 +8,7 @@
 
 [4. Maximum Likelihood Learning](/MLLearning/README.md)
 
-[5. Latent Variable Models](/LatentVariableModels/README.md)
-
-[6. Learning Latent Variable Models](/LearningLatentVariableModels/README.md)
+[5. Latent Variable Models + VAE](/LatentVariableModels/README.md)
 
 7. Normalizing Flows
 8. Advanced Flow Models
