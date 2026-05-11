@@ -10,9 +10,8 @@
 
 [5. Latent Variable Models](/LatentVariableModels/README.md)
 
+[6. Learning Latent Variable Models](/LearningLatentVariableModels/README.md)
 
-5. Latent Variable Models
-6. Learning Latent Variable Models
 7. Normalizing Flows
 8. Advanced Flow Models
 9. Generative Adversarial Networks
