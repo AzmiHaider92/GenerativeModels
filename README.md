@@ -1,5 +1,9 @@
 # GenerativeModels  
 
+Based on the lectures of :
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/IZgvgLy1wyg&list=PL2UML_KCiC0UPzjW9BjO-IW6dqliu9O4B/0.jpg)](https://www.youtube.com/watch?v=IZgvgLy1wyg&list=PL2UML_KCiC0UPzjW9BjO-IW6dqliu9O4B)
+
+
 [1. Introduction](/Intro/README.md)
 
 [2. Probabilistic Modeling](/ProbabilisticModeling/README.md)
