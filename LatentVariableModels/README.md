@@ -479,6 +479,7 @@ to approximate the true posterior.
 - Maximizing ELBO approximates maximum likelihood learning.
 - VAEs are deep latent variable models trained with the ELBO objective.
 
+---
 
 
 # 15. Gradient-Based Optimization of the ELBO
@@ -976,31 +977,7 @@ into a practical generative model.
 
 ---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-
-[← Go to Previous Repository - MLLearning](../MLLearning/README.md)
+[← Go to Previous Repository - Latent Variable Models](../LatentVariableModels/README.md)
 
 [→ Go to Next Repository - TBD]
 
