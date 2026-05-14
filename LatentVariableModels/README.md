@@ -979,7 +979,7 @@ into a practical generative model.
 
 [← Go to Previous Repository - Maximum Likelihood Learning](../MLLearning/README.md)
 
-[→ Go to Next Repository - TBD]
+[→ Go to Next Repository - Normalizing Flows](../NormalizingFlows/README.md)
 
 [← Back to Main Repository](../README.md)
 
