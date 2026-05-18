@@ -17,9 +17,8 @@ Based on the lectures of Volodymyr Kuleshov:
 
 [5-6. Latent Variable Models + VAE](/LatentVariableModels/README.md)
 
-[7. Normalizing Flows](/NormalizingFlows/README.md)
+[7-8. Normalizing Flows](/NormalizingFlows/README.md)
 
-8. Advanced Flow Models
 9. Generative Adversarial Networks
 10. Energy-Based Models
 11. Score-Based Models
