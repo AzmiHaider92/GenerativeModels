@@ -583,6 +583,6 @@ They start from a simple known distribution and **warp probability density into 
 
 [← Go to Previous Repository - Latent Variable Models / VAE](../LatentVariableModels/README.md)
 
-[→ Go to Next Repository - TBD]
+[→ Go to Next Repository - GANs](../GANs/README.md)
 
 [← Back to Main Repository](../README.md)
