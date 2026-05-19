@@ -801,7 +801,7 @@ $$
 J =
 \begin{bmatrix}
 I & 0 \\
-\frac{\partial y_b}{\partial x_a} & \operatorname{diag}(\exp(s(x_a)))
+\ast & \operatorname{diag}(\exp(s))
 \end{bmatrix}
 $$
 
