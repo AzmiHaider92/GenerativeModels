@@ -798,10 +798,10 @@ Still easy.
 The Jacobian is triangular:
 
 $$
-J=
+J =
 \begin{bmatrix}
 I & 0 \\
-* & diag(\exp(s))
+\frac{\partial y_b}{\partial x_a} & \operatorname{diag}(\exp(s(x_a)))
 \end{bmatrix}
 $$
 
