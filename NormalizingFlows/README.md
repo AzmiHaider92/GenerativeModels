@@ -576,6 +576,8 @@ Instead:
 
 They start from a simple known distribution and **warp probability density into the data distribution using invertible transformations**, while keeping exact probability computation possible.
 
+---
+
 
 # 14. Examples of Normalizing Flow Models
 
