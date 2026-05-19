@@ -801,7 +801,7 @@ $$
 J =
 \begin{bmatrix}
 I & 0 \\
-\ast & \operatorname{diag}(\exp(s))
+A & \mathrm{diag}(\exp(s))
 \end{bmatrix}
 $$
 
