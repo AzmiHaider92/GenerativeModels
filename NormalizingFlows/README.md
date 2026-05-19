@@ -577,7 +577,430 @@ Instead:
 They start from a simple known distribution and **warp probability density into the data distribution using invertible transformations**, while keeping exact probability computation possible.
 
 
+# 14. Examples of Normalizing Flow Models
 
+The main challenge in normalizing flows is designing transformations that are:
+
+- invertible
+- expressive
+- efficient to invert
+- efficient to compute the Jacobian determinant
+
+A generic neural network does not satisfy these constraints.
+
+Its Jacobian determinant is expensive to compute:
+
+$$
+O(D^3)
+$$
+
+for a dense $D \times D$ Jacobian.
+
+This motivated specialized flow architectures.
+
+---
+
+## Coupling Layers (Core Idea)
+
+The key trick behind many normalizing flows is the **coupling layer**.
+
+Split the input into two parts:
+
+$$
+x=(x_a,x_b)
+$$
+
+Example:
+
+$$
+x=[x_1,x_2,x_3,x_4]
+$$
+
+Split into:
+
+$$
+x_a=[x_1,x_2]
+$$
+
+$$
+x_b=[x_3,x_4]
+$$
+
+Transform only one part using the other:
+
+$$
+y_a=x_a
+$$
+
+$$
+y_b=x_b+t(x_a)
+$$
+
+where:
+
+$$
+t(\cdot)
+$$
+
+is a neural network.
+
+---
+
+### Why is this invertible?
+
+Forward:
+
+$$
+y_b=x_b+t(x_a)
+$$
+
+Inverse:
+
+$$
+x_b=y_b-t(y_a)
+$$
+
+So inversion is trivial.
+
+---
+
+### Jacobian
+
+The Jacobian becomes:
+
+$$
+J=
+\begin{bmatrix}
+I & 0 \\
+\frac{\partial t}{\partial x_a} & I
+\end{bmatrix}
+$$
+
+This is triangular.
+
+Determinant:
+
+$$
+\det(J)=1
+$$
+
+because the determinant of a triangular matrix is the product of its diagonal entries.
+
+This makes likelihood computation cheap.
+
+This simple idea is the foundation of many flow models.
+
+---
+
+## NICE
+
+**Non-linear Independent Components Estimation (NICE)** was one of the earliest practical normalizing flow models.
+
+It uses additive coupling:
+
+$$
+y_a=x_a
+$$
+
+$$
+y_b=x_b+t(x_a)
+$$
+
+Properties:
+
+- invertible
+- exact likelihood
+- trivial inverse
+- cheap determinant
+
+Since:
+
+$$
+\det(J)=1
+$$
+
+NICE preserves volume.
+
+This means it can rearrange probability density, but cannot stretch or compress it.
+
+---
+
+### Intuition
+
+NICE is like reshaping clay without changing its volume.
+
+Expressive, but somewhat limited.
+
+---
+
+## RealNVP
+
+RealNVP improves NICE by allowing scaling.
+
+Instead of additive coupling:
+
+$$
+y_b=x_b+t(x_a)
+$$
+
+it uses affine coupling:
+
+$$
+y_a=x_a
+$$
+
+$$
+y_b=x_b \odot \exp(s(x_a)) + t(x_a)
+$$
+
+where:
+
+- $s(\cdot)$ = scale network
+- $t(\cdot)$ = translation network
+- $\odot$ = elementwise multiplication
+
+---
+
+### Why is this better?
+
+Now the model can:
+
+- stretch space
+- compress space
+- reshape densities more flexibly
+
+instead of only rearranging them.
+
+---
+
+### Inverse
+
+Forward:
+
+$$
+y_b=x_b \odot \exp(s(x_a)) + t(x_a)
+$$
+
+Inverse:
+
+$$
+x_b=(y_b-t(y_a))\odot \exp(-s(y_a))
+$$
+
+Still easy.
+
+---
+
+### Jacobian
+
+The Jacobian is triangular:
+
+$$
+J=
+\begin{bmatrix}
+I & 0 \\
+* & diag(\exp(s))
+\end{bmatrix}
+$$
+
+Determinant:
+
+$$
+\prod_i \exp(s_i)
+$$
+
+Log determinant:
+
+$$
+\sum_i s_i
+$$
+
+Efficient and exact.
+
+This made RealNVP a major breakthrough.
+
+---
+
+## Glow
+
+Glow builds on RealNVP.
+
+The main issue with coupling layers:
+
+Half of the variables remain unchanged in each layer:
+
+$$
+y_a=x_a
+$$
+
+So information mixing can be slow.
+
+Glow improves this.
+
+---
+
+### Glow Block
+
+Each block contains:
+
+1. ActNorm
+2. Invertible 1x1 Convolution
+3. Affine Coupling
+
+---
+
+### ActNorm
+
+A simple learned affine transform:
+
+$$
+y=s \odot x+b
+$$
+
+Inverse:
+
+$$
+x=(y-b)/s
+$$
+
+Determinant is easy:
+
+product of scaling terms.
+
+Purpose:
+
+stable normalization.
+
+---
+
+### Invertible 1x1 Convolution
+
+Instead of manually permuting channels, Glow learns a mixing transformation:
+
+$$
+y=Wx
+$$
+
+where:
+
+$$
+W
+$$
+
+is invertible.
+
+This mixes dimensions more effectively.
+
+Determinant:
+
+$$
+\det(W)
+$$
+
+which is cheap when applied over channel dimensions.
+
+---
+
+### Affine Coupling
+
+Same as RealNVP:
+
+$$
+y_b=x_b \odot \exp(s(x_a))+t(x_a)
+$$
+
+---
+
+### Why Glow works better
+
+Compared to fixed permutations in RealNVP:
+
+Glow learns how to mix features.
+
+This improves expressiveness significantly.
+
+---
+
+## Continuous Normalizing Flows (CNFs)
+
+Instead of stacking discrete invertible layers:
+
+$$
+z_{k+1}=f_k(z_k)
+$$
+
+CNFs define continuous dynamics:
+
+$$
+\frac{dz}{dt}=v_\theta(z,t)
+$$
+
+The latent evolves continuously.
+
+Instead of determinant terms, density evolves according to:
+
+$$
+\frac{d}{dt}\log p(z(t)) =
+-\nabla \cdot v_\theta(z,t)
+$$
+
+where:
+
+$$
+\nabla \cdot v
+$$
+
+is the divergence.
+
+---
+
+### Connection
+
+CNFs connect normalizing flows to:
+
+- Neural ODEs
+- Flow Matching
+- Rectified Flows
+
+---
+
+## Evolution of Flow Models
+
+Coupling Layers:
+
+easy inverse + cheap determinant
+
+↓
+
+NICE:
+
+additive coupling
+
+↓
+
+RealNVP:
+
+affine coupling
+
+↓
+
+Glow:
+
+better feature mixing
+
+↓
+
+Continuous Flows:
+
+continuous-time transformations
+
+---
+
+## Big Picture
+
+All flow architectures solve the same problem:
+
+> How do we design invertible transformations that are expressive enough for complex data, while keeping exact likelihood computation tractable?
 
 ---
 
