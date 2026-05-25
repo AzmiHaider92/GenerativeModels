@@ -678,6 +678,6 @@ GANs ask:
 
 [← Go to Previous Repository - Normalizing Flows](../NormalizingFlows/README.md)
 
-[→ Go to Next Repository - TBD]
+[→ Go to Next Repository - Energy Based Models](../EBMs/README.md)
 
 [← Back to Main Repository](../README.md)
