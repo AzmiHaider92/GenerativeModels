@@ -1,5 +1,3 @@
-# lets fucking do it
-
 
 # Energy-Based Models (EBMs)
 
