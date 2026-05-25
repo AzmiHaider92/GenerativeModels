@@ -19,7 +19,10 @@ Based on the lectures of Volodymyr Kuleshov:
 
 [7-8. Normalizing Flows](/NormalizingFlows/README.md)
 
-9. Generative Adversarial Networks
+[9. Generative Adversarial Networks](/GANs/README.md)
+
+
+
 10. Energy-Based Models
 11. Score-Based Models
 12. Diffusion Models
