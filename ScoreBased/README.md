@@ -458,6 +458,11 @@ Interpretation:
 
 This is **annealed Langevin dynamics**.
 
+<p align="center">
+  <img src="../ScoreBased/annealed.png" alt="Score Function" width="500"/>
+</p>
+
+
 ---
 
 # 10. Sliced Score Matching
