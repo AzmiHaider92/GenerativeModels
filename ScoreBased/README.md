@@ -85,8 +85,8 @@ asks:
 <p align="center">
   <img src="../ScoreBased/score_function.png" alt="Score Function" width="300"/>
 </p>
----
 
+---
 
 ## Example: Standard Gaussian
 
