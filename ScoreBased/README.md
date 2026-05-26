@@ -83,7 +83,7 @@ asks:
 > How should the sample itself move to become more likely?
 
 <p align="center">
-  <img src="../ScoreBased/score_function.png" alt="Score Function" width="300"/>
+  <img src="../ScoreBased/score_function.png" alt="Score Function" width="600"/>
 </p>
 
 ---
