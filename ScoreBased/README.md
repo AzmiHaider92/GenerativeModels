@@ -589,3 +589,13 @@ $$
 → structured noise corruption + learned reverse denoising
 
 Modern diffusion models are direct descendants of score-based generative modeling.
+
+
+
+---
+
+[← Go to Previous Repository - Energy-Based Models](../EBMs/README.md)
+
+[→ Go to Next Repository - Diffusion Models](../Diffusion/README.md)
+
+[← Back to Main Repository](../README.md)
