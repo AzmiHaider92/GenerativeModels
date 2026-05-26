@@ -570,6 +570,6 @@ starting from noise and descending the learned energy landscape with randomness.
 
 [← Go to Previous Repository - Normalizing Flows](../GANs/README.md)
 
-[→ Go to Next Repository - TBD]
+[→ Go to Next Repository - Score-Based Models](../ScoreBased/README.md)
 
 [← Back to Main Repository](../README.md)
