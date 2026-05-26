@@ -199,7 +199,7 @@ This avoids needing the unknown true score directly.
 
 
 <p align="center">
-  <img src="../ScoreBased/fisher_div.png" alt="Score Function" width="600"/>
+  <img src="../ScoreBased/fisher_div.png" alt="Score Function" width="500"/>
 </p>
 
 
@@ -250,6 +250,11 @@ $$
 becomes unstable or undefined.
 
 This is catastrophic because sampling starts from random noise far away from the data manifold.
+
+<p align="center">
+  <img src="../ScoreBased/Manifold_problem.png" alt="Score Function" width="500"/>
+</p>
+
 
 ---
 
