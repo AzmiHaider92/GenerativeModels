@@ -297,6 +297,12 @@ $$
 
 which is smooth and well-defined.
 
+<p align="center">
+  <img src="../ScoreBased/Manifold_solution.png" alt="Score Function" width="500"/>
+</p>
+
+
+
 ---
 
 # 7. Denoising Score Matching
