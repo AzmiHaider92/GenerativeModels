@@ -82,9 +82,9 @@ asks:
 
 > How should the sample itself move to become more likely?
 
-
-![Alt text](../ScoreBased/score_function.png)
-
+<p align="center">
+  <img src="../score_based/score_function.png" alt="Score Function" width="500"/>
+</p>
 ---
 
 
