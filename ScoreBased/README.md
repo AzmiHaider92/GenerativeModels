@@ -197,6 +197,12 @@ $$
 
 This avoids needing the unknown true score directly.
 
+
+<p align="center">
+  <img src="../ScoreBased/fisher_div.png" alt="Score Function" width="600"/>
+</p>
+
+
 ---
 
 # 5. The Manifold Problem
