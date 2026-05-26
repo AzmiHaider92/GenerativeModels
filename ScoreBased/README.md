@@ -499,6 +499,12 @@ $$
 
 we can estimate divergence efficiently.
 
+
+<p align="center">
+  <img src="../ScoreBased/sliced_score_matching.png" alt="Score Function" width="500"/>
+</p>
+
+
 ---
 
 # 11. Final Big Picture
