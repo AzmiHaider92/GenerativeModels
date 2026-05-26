@@ -84,6 +84,10 @@ asks:
 
 ---
 
+![plot](../ScoreBased/score_function.png)
+
+
+
 ## Example: Standard Gaussian
 
 Suppose:
