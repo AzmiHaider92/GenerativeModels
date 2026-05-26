@@ -82,10 +82,10 @@ asks:
 
 > How should the sample itself move to become more likely?
 
+
+![Alt text](../ScoreBased/score_function.png)
+
 ---
-
-![plot](../ScoreBased/score_function.png)
-
 
 
 ## Example: Standard Gaussian
