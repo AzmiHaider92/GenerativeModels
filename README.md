@@ -21,11 +21,12 @@ Based on the lectures of Volodymyr Kuleshov:
 
 [9. Generative Adversarial Networks](/GANs/README.md)
 
+[10. Energy-Based Models](/EBMs/README.md)
 
+[11. Score-Based Models](/ScoreBased/README.md)
 
-10. Energy-Based Models
-11. Score-Based Models
-12. Diffusion Models
+[12. Diffusion Models](/Diffusion/README.md)
+
 13. Advanced Diffusion Models
 14. Evaluating Generative Models
 15. Combining Generative Model Families
