@@ -174,7 +174,8 @@ $$
 
 # 6. Why Introduce the Posterior?
 
-The Posterior is 
+The Posterior is:
+
 $$ 
 q(x_{t-1}|x_t,x_0) 
 $$
