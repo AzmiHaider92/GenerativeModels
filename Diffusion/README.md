@@ -381,3 +381,12 @@ $$
 - Diffusion can be derived from variational inference.
 - Diffusion can be derived from denoising score matching.
 - Noise prediction and score prediction are equivalent.
+
+
+---
+
+[← Go to Previous Repository - Score-Based Models](../ScoreBased/README.md)
+
+[→ Go to Next Repository - TBD]
+
+[← Back to Main Repository](../README.md)
