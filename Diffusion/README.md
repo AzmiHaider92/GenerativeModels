@@ -172,7 +172,8 @@ $$
 
 ---
 
-# 6. Why Introduce $$ q(x_{t-1}|x_t,x_0) $$ ?
+# 6. Why Introduce the Posterior q(x_{t-1}|x_t,x_0)?
+
 
 During training we know the clean image:
 
