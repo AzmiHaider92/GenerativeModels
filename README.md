@@ -27,11 +27,6 @@ Based on the lectures of Volodymyr Kuleshov:
 
 [12. Diffusion Models](/Diffusion/README.md)
 
-13. Advanced Diffusion Models
-14. Evaluating Generative Models
-15. Combining Generative Model Families
-16. Discrete Deep Generative Models
-17. Probabilistic Reasoning
   
 
 
